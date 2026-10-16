@@ -129,7 +129,7 @@ export default function MiniCart() {
                 <Link
                   href="/checkout"
                   onClick={closeCart}
-                  className="block w-full rounded-lg bg-[#0A2540] py-3.5 text-center font-medium text-white transition-transform hover:scale-[1.01]"
+                  className="site-action block w-full py-3.5 text-center"
                 >
                   Proceed to Checkout
                 </Link>

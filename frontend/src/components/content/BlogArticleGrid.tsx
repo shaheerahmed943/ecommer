@@ -51,7 +51,7 @@ export default function BlogArticleGrid({ articles }: { articles: BlogArticle[] 
               <h2 className="mt-2 line-clamp-3 text-base font-medium leading-6">{article.title}</h2>
               <p className="mt-2 line-clamp-2 text-xs leading-5 text-neutral-600">{article.summary}</p>
               <p className="mt-2 text-[10px] text-neutral-500">{article.readTime}</p>
-              <Link href={`/blogs/news/${articleSlug(article.title)}`} className="mt-4 inline-flex bg-black px-4 py-2 text-[10px] font-semibold text-white">
+              <Link href={`/blogs/news/${articleSlug(article.title)}`} className="site-action mt-4 inline-flex px-4 py-2">
                 READ MORE
               </Link>
             </div>

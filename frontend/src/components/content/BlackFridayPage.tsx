@@ -43,7 +43,7 @@ export default function BlackFridayPage({
                 className="min-w-0 flex-1 rounded-sm px-2 py-2 text-[10px] text-neutral-900 outline-none"
                 aria-label="Email address"
               />
-              <button type="submit" className="rounded-sm bg-black px-3 py-2 text-[10px] font-semibold text-white">
+              <button type="submit" className="site-action px-3 py-2">
                 Subscribe
               </button>
             </form>

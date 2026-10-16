@@ -68,7 +68,7 @@ export default function VapeKitBundlesSection({ products, spotlight = DEFAULT_SP
           <div className="mt-8 text-center">
             <Link
               href={collectionHref}
-              className="inline-flex min-h-10 items-center justify-center rounded-sm bg-[#0A2540] px-5 text-sm font-medium text-white transition-colors hover:bg-[#16466f]"
+              className="site-action inline-flex px-5 py-2"
             >
               {spotlight.ctaText}
             </Link>
@@ -78,7 +78,7 @@ export default function VapeKitBundlesSection({ products, spotlight = DEFAULT_SP
           <div className="mt-8 text-center">
             <Link
               href={collectionHref}
-              className="inline-flex min-h-10 items-center justify-center rounded-sm bg-[#0A2540] px-5 text-sm font-medium text-white transition-colors hover:bg-[#16466f]"
+              className="site-action inline-flex px-5 py-2"
             >
               {spotlight.ctaText}
             </Link>

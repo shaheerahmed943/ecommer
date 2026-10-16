@@ -221,7 +221,7 @@ export default function CheckoutForm() {
           <button
             type="submit"
             disabled={isSubmitting || items.length === 0}
-            className="flex w-full items-center justify-center gap-2 rounded-lg bg-[#0A2540] py-3.5 font-medium text-white disabled:bg-neutral-300"
+            className="site-action flex w-full items-center gap-2 py-3.5 disabled:cursor-not-allowed"
           >
             {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
             {paymentMethod === "CARD" ? "Pay securely with Stripe" : "Place Order (COD)"}

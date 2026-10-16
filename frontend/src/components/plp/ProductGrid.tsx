@@ -73,7 +73,7 @@ export default function ProductGrid({ products }: { products: PLPProduct[] }) {
             <button
               onClick={() => quickAdd(product)}
               disabled={!inStock}
-              className="mt-2 w-full rounded-md border border-[#0A2540] py-2 text-xs font-medium text-[#0A2540] transition-colors hover:bg-[#0A2540] hover:text-white disabled:cursor-not-allowed disabled:border-neutral-200 disabled:text-neutral-300"
+              className="site-action mt-2 w-full py-2 disabled:cursor-not-allowed"
             >
               {inStock ? "Quick Add" : "Out of Stock"}
             </button>

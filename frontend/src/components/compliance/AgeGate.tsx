@@ -35,10 +35,10 @@ export default function AgeGate() {
           This website sells age-restricted vaping products. You must be 18 or over to enter.
         </p>
         <div className="mt-6 flex gap-3">
-          <button onClick={confirmAge} className="flex-1 rounded-lg bg-[#0A2540] px-4 py-3 text-sm font-semibold text-white">
+          <button onClick={confirmAge} className="site-action flex-1 px-4 py-3">
             Yes, enter store
           </button>
-          <a href="https://www.google.com" className="flex-1 rounded-lg border border-neutral-300 px-4 py-3 text-sm font-semibold text-neutral-700">
+          <a href="https://www.google.com" className="site-action flex-1 px-4 py-3">
             Leave
           </a>
         </div>

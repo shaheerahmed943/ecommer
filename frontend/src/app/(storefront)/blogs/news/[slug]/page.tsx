@@ -214,7 +214,7 @@ export default async function BlogArticlePage({ params }: { params: { slug: stri
             <h2 className="mb-4 text-center text-xl font-semibold">Leave a comment</h2>
             <div className="grid gap-3 sm:grid-cols-2"><input placeholder="Name" className="border border-neutral-300 p-3 text-xs" /><input placeholder="Email" className="border border-neutral-300 p-3 text-xs" /></div>
             <textarea placeholder="Message" rows={5} className="mt-3 w-full border border-neutral-300 p-3 text-xs" />
-            <button type="button" className="mt-3 bg-black px-5 py-2 text-[10px] font-semibold text-white">SUBMIT COMMENT</button>
+            <button type="button" className="site-action mt-3 px-5 py-2">SUBMIT COMMENT</button>
           </div>
         </article>
       </div>

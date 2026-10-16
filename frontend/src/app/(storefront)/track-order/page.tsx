@@ -63,7 +63,7 @@ export default function TrackOrderPage() {
         <button
           type="submit"
           disabled={isLoading}
-          className="flex items-center justify-center gap-2 rounded-lg bg-[#0A2540] px-6 py-3 font-medium text-white disabled:bg-neutral-300"
+          className="site-action flex items-center gap-2 px-6 py-3 disabled:cursor-not-allowed"
         >
           {isLoading && <Loader2 className="h-4 w-4 animate-spin" />}
           Track

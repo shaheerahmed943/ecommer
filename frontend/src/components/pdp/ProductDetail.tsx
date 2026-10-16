@@ -462,7 +462,7 @@ export default function ProductDetail(product: ProductDetailProps) {
           <button
             onClick={product.bundleEnabled ? () => setBundleStep("addons") : handleAddToCart}
             disabled={!activeVariant || displayStock <= 0}
-            className="flex-1 rounded-lg bg-[#0A2540] py-3.5 font-medium text-white transition-transform hover:scale-[1.01] disabled:cursor-not-allowed disabled:bg-neutral-300"
+            className="site-action flex-1 py-3.5 disabled:cursor-not-allowed"
           >
             {product.bundleEnabled ? "Next: Select flavours" : displayStock <= 0 ? "Out of Stock" : "Add to Cart"}
           </button>
@@ -627,7 +627,7 @@ export default function ProductDetail(product: ProductDetailProps) {
                       type="button"
                       onClick={() => addRelatedProductToCart(relatedProduct)}
                       disabled={!relatedProduct.variants.some((variant) => variant.id === relatedVariantIds[relatedProduct.id] && variant.isActive !== false && variant.stockQuantity > 0)}
-                      className="w-full bg-[#111b3a] px-3 py-2.5 text-xs font-semibold text-white transition-colors hover:bg-[#1d2a52] disabled:cursor-not-allowed disabled:bg-neutral-300"
+                      className="site-action w-full px-3 py-2.5 disabled:cursor-not-allowed"
                     >
                       Quick Buy
                     </button>

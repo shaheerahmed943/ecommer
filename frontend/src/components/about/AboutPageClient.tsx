@@ -59,7 +59,7 @@ export default function AboutPageClient({ content }: { content: AboutContent }) 
             <ul className="mt-4 space-y-3 text-sm leading-6 text-neutral-600">
               {content.whyShopSection.points.map((value) => <li key={value.title}><strong className="text-[#111]">{value.title}:</strong> {value.description}</li>)}
             </ul>
-            <Link href={content.whyShopSection.buttonHref} className="mt-6 inline-flex rounded-md bg-[#c9002b] px-5 py-2.5 text-xs font-semibold text-white hover:bg-[#a90024]">
+            <Link href={content.whyShopSection.buttonHref} className="site-action mt-6 inline-flex px-5 py-2.5">
               {content.whyShopSection.buttonLabel}
             </Link>
           </div>

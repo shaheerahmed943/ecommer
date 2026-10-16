@@ -211,7 +211,7 @@ export default function BundleAddonSelector({
                         sizes="(max-width: 640px) 33vw, 160px"
                         className="object-contain p-1"
                       />
-                      <span className="absolute left-1 top-1 rounded-full bg-white px-1.5 py-0.5 text-[8px] font-semibold text-green-700">FREE</span>
+                      <span className="absolute left-1 top-1 rounded-full bg-white px-1.5 py-0.5 text-[8px] font-semibold text-green-700">PAID</span>
                     </div>
                     <div className="p-1.5">
                       <p className="line-clamp-3 min-h-9 text-[10px] font-semibold leading-3 text-[#0A2540]">{product.title}</p>
@@ -235,7 +235,7 @@ export default function BundleAddonSelector({
                         aria-pressed={selectedProduct}
                         className={`mt-1.5 min-h-8 w-full rounded text-[9px] font-semibold ${selectedProduct ? "bg-[#0A2540] text-white" : "border border-[#0A2540] text-[#0A2540] hover:bg-[#0A2540] hover:text-white"}`}
                       >
-                        {selectedProduct ? "Selected · Remove" : `Add ${selectionType === "coil" ? "coil" : effectiveConfig.freeProductLabel}`}
+                        {selectedProduct ? "Selected · Remove" : `Add ${selectionType === "coil" ? "coil" : "Paid product"}`}
                       </button>
                     </div>
                   </article>
@@ -256,7 +256,7 @@ export default function BundleAddonSelector({
                 onBack();
               }
             }} className="min-h-11 rounded-lg border border-neutral-300 px-4 text-sm font-medium text-neutral-700">Back</button>
-            <button type="button" onClick={continueFromSelection} disabled={!mainAvailable || (selectionType === "coil" ? selectedCoils.length < minCoils : selectedFlavours.length < requiredFlavours)} className="min-h-11 flex-1 rounded-lg bg-[#0A2540] px-4 text-sm font-medium text-white disabled:cursor-not-allowed disabled:bg-neutral-300">
+            <button type="button" onClick={continueFromSelection} disabled={!mainAvailable || (selectionType === "coil" ? selectedCoils.length < minCoils : selectedFlavours.length < requiredFlavours)} className="site-action min-h-11 flex-1 px-4 disabled:cursor-not-allowed">
               {selectionType === "flavour" ? "Next: Select coils →" : "Continue to review →"}
             </button>
           </div>
@@ -284,7 +284,7 @@ export default function BundleAddonSelector({
           {error && <p role="alert" className="mt-3 rounded-md border border-red-200 bg-red-50 p-3 text-sm text-red-700">{error}</p>}
           <div className="mt-5 flex gap-3">
             <button type="button" onClick={() => setStep("products")} className="min-h-11 rounded-lg border border-neutral-300 px-4 text-sm font-medium text-neutral-700">← Back</button>
-            <button type="button" onClick={() => onConfirm(selected)} disabled={!mainAvailable || selectedFlavours.length < requiredFlavours || (hasConfiguredCoils && selectedCoils.length !== 1)} className="min-h-11 flex-1 rounded-lg bg-[#0A2540] px-4 text-sm font-semibold text-white disabled:cursor-not-allowed disabled:bg-neutral-300">Add Bundle to Cart</button>
+            <button type="button" onClick={() => onConfirm(selected)} disabled={!mainAvailable || selectedFlavours.length < requiredFlavours || (hasConfiguredCoils && selectedCoils.length !== 1)} className="site-action min-h-11 flex-1 px-4 disabled:cursor-not-allowed">Add Bundle to Cart</button>
           </div>
         </>
       )}

@@ -122,7 +122,7 @@ export default function VapingTrendsSection({ section }: { section?: TrendsSecti
                 </p>
                 <Link
                   href={article.href || "/blogs/news"}
-                  className="mt-4 inline-flex min-h-8 w-fit items-center rounded-full bg-green-600 px-4 text-xs font-semibold text-white transition-colors hover:bg-green-700"
+                  className="site-action inline-flex px-4 py-2"
                 >
                   Read More
                 </Link>
@@ -134,7 +134,7 @@ export default function VapingTrendsSection({ section }: { section?: TrendsSecti
         <div className="mt-7 text-center">
           <Link
             href={content.ctaLink || "/blogs/news"}
-            className="inline-flex min-h-9 items-center rounded-full bg-black px-5 text-xs font-semibold text-white transition-colors hover:bg-neutral-800"
+            className="site-action inline-flex px-5 py-2"
           >
             {content.ctaText || "View More"}
           </Link>

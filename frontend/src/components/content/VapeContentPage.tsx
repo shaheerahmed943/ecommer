@@ -43,7 +43,7 @@ export default function VapeContentPage({
       {links.length > 0 && (
         <div className="mt-8 flex flex-wrap gap-3">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="rounded-full border border-[#0A2540] px-4 py-2 text-sm text-[#0A2540] hover:bg-[#0A2540] hover:text-white">
+            <Link key={link.href} href={link.href} className="site-action inline-flex px-4 py-2">
               {link.label}
             </Link>
           ))}

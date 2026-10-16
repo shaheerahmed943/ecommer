@@ -38,7 +38,7 @@ export default function WelcomeStoreSection({ content }: { content?: WelcomeSect
         {section.ctaText && section.ctaLink && (
           <Link
             href={section.ctaLink}
-            className="mt-5 inline-flex min-h-10 items-center rounded-full bg-green-600 px-5 text-sm font-semibold text-white transition-colors hover:bg-green-700"
+            className="site-action mt-5 inline-flex px-5 py-2"
           >
             {section.ctaText}
           </Link>

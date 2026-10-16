@@ -5,11 +5,46 @@
 :root {
   --font-inter: "Inter", sans-serif;
   --font-playfair: "Playfair Display", serif;
+  --promo-banner-bg: #00a046;
 }
 
 body {
   background-color: #ffffff;
   color: #0a2540;
+}
+
+.promo-banner {
+  background-color: var(--promo-banner-bg);
+}
+
+.site-action {
+  min-height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 0 !important;
+  border-radius: 7px;
+  background:
+    radial-gradient(ellipse 42% 100% at 50% 50%, #007d35 0%, #005322 48%, #001d0d 76%, #000000 100%) !important;
+  color: #ffffff !important;
+  font-family: Arial, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+  text-transform: uppercase;
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+  transition: box-shadow 180ms ease, filter 180ms ease;
+}
+
+.site-action:hover:not(:disabled) {
+  box-shadow: inset 0 0 0 1px rgba(0, 160, 70, 0.15), 0 0 16px rgba(0, 160, 70, 0.28);
+  filter: brightness(1.12);
+}
+
+.site-action:disabled {
+  background: #d1d5db !important;
+  color: #ffffff !important;
+  filter: none;
 }
 
 .blog-default-content {

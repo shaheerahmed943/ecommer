@@ -259,7 +259,7 @@ export default async function GenericPage({ params }: { params: { slug: string }
                     <p className="text-[10px] uppercase tracking-wide text-neutral-500">{article.category} · {article.date}</p>
                     <h3 className="mt-2 line-clamp-2 text-base font-medium leading-6 text-[#111]">{article.title}</h3>
                     <p className="mt-2 line-clamp-2 text-xs leading-5 text-neutral-600">{article.summary}</p>
-                    <Link href={`/blogs/news/${blogSlug(article.title)}`} className="mt-4 inline-flex bg-black px-4 py-2 text-[10px] font-semibold text-white">READ MORE</Link>
+                    <Link href={`/blogs/news/${blogSlug(article.title)}`} className="site-action mt-4 inline-flex px-4 py-2">READ MORE</Link>
                   </div>
                 </article>
               ))}

@@ -48,7 +48,7 @@ export default function SitemapPage({
                 <button
                   type="button"
                   onClick={() => setExpandedGroups((current) => ({ ...current, [index]: !isExpanded }))}
-                  className="mt-5 inline-flex rounded-sm bg-green-600 px-3 py-2 text-xs font-semibold text-white hover:bg-green-700"
+                  className="site-action mt-5 inline-flex px-3 py-2"
                 >
                   {isExpanded ? "Show Less" : "Show More"}
                 </button>

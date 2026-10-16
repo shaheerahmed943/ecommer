@@ -25,7 +25,7 @@ export default function ContactForm() {
       <input required placeholder="Full Name" className="w-full rounded-lg border border-neutral-300 p-3" />
       <input required type="email" placeholder="Email" className="w-full rounded-lg border border-neutral-300 p-3" />
       <textarea required rows={5} placeholder="Your message" className="w-full rounded-lg border border-neutral-300 p-3" />
-      <button type="submit" className="w-full rounded-lg bg-[#0A2540] py-3.5 font-medium text-white">
+      <button type="submit" className="site-action w-full py-3.5">
         Send Message
       </button>
     </form>

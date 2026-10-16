@@ -79,7 +79,7 @@ export default function HeroCarousel({ slides }: { slides: HeroSlide[] }) {
           >
             <Link
               href={slide.ctaLink}
-              className="mt-2 inline-block rounded-lg bg-[#C5DC3B] px-6 py-3 text-sm font-medium text-[#0A2540] transition-transform hover:scale-105"
+              className="site-action mt-2 inline-flex px-6 py-3"
             >
               {slide.ctaText}
             </Link>

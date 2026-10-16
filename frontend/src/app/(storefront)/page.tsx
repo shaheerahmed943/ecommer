@@ -106,7 +106,7 @@ export default async function HomePage() {
   return (
     <div>
       {homepage.promoBanner?.isActive && homepage.promoBanner.text && (
-        <div className="bg-[#0A2540] py-2 text-center text-xs text-white">
+        <div className="promo-banner py-2 text-center text-xs text-white">
           {homepage.promoBanner.text}
         </div>
       )}
