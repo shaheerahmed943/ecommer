@@ -1,4 +1,11 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:4000/api";
+// Browser calls go through the same-origin Next.js rewrite (see next.config.js)
+// so the API works in previews/deployments without exposing the backend port.
+// Server-side rendering talks to the backend directly.
+const API_BASE_URL =
+  process.env.NEXT_PUBLIC_API_URL ??
+  (typeof window === "undefined"
+    ? `${process.env.BACKEND_URL ?? "http://localhost:4000"}/api`
+    : "/api");
 const TOKEN_STORAGE_KEY = "ecosmoke_auth_token";
 const AGE_TOKEN_STORAGE_KEY = "ecosmoke_age_verification";
 
