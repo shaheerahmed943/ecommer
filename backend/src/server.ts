@@ -83,6 +83,10 @@ app.get("/api/health", (_req, res) => res.status(200).json({ status: "ok" }));
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`EcoSmok API listening on port ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`EcoSmok API listening on port ${PORT}`);
+  });
+}
+
+export default app;
