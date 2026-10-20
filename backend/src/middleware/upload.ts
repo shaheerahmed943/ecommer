@@ -3,7 +3,10 @@ import path from "path";
 import fs from "fs";
 import crypto from "crypto";
 
-const UPLOAD_DIR = path.join(__dirname, "../../uploads");
+// Vercel functions have a read-only filesystem except /tmp, so uploads there are ephemeral.
+const UPLOAD_DIR = process.env.VERCEL
+  ? path.join("/tmp", "uploads")
+  : path.join(__dirname, "../../uploads");
 
 // Ensure the uploads directory exists before multer tries to write to it.
 if (!fs.existsSync(UPLOAD_DIR)) {

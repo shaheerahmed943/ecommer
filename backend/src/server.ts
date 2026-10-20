@@ -29,19 +29,24 @@ app.use(helmet({ crossOriginResourcePolicy: false })); // allow <img> to load /u
 app.use(
   cors({
     origin: (origin, callback) => {
-      const configuredOrigin = process.env.STOREFRONT_URL ?? "http://localhost:3000";
-      const isLocalFrontend =
-        origin === "http://localhost:3000" ||
-        origin === "http://localhost:3001" ||
-        origin === "http://127.0.0.1:3000" ||
-        origin === "http://127.0.0.1:3001";
+      const configuredOrigins = (process.env.STOREFRONT_URL ?? "http://localhost:3000")
+        .split(",")
+        .map((value) => value.trim().replace(/\/$/, ""))
+        .filter(Boolean);
+      const isLocalFrontend = !!origin && /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(origin);
+      // v0 preview iframes are served from these hosts; only trusted outside production.
+      const isV0Preview =
+        process.env.NODE_ENV !== "production" &&
+        !!origin &&
+        /^https:\/\/[a-z0-9-]+(\.[a-z0-9-]+)*\.(vusercontent\.net|v0\.app|v0\.dev|vercel\.run)$/i.test(origin);
 
-      if (!origin || origin === configuredOrigin || isLocalFrontend) {
+      if (!origin || configuredOrigins.includes(origin) || isLocalFrontend || isV0Preview) {
         callback(null, true);
         return;
       }
 
-      callback(new Error("Origin is not allowed by CORS."));
+      console.warn(`[cors] Blocked origin: ${origin}`);
+      callback(null, false);
     },
     credentials: true,
   }),
@@ -78,6 +83,10 @@ app.get("/api/health", (_req, res) => res.status(200).json({ status: "ok" }));
 app.use(notFoundHandler);
 app.use(errorHandler);
 
-app.listen(PORT, () => {
-  console.log(`EcoSmok API listening on port ${PORT}`);
-});
+if (!process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`EcoSmok API listening on port ${PORT}`);
+  });
+}
+
+export default app;
