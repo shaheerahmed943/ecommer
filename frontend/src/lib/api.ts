@@ -4,7 +4,7 @@
 const API_BASE_URL =
   process.env.NEXT_PUBLIC_API_URL ??
   (typeof window === "undefined"
-    ? `${process.env.BACKEND_URL ?? "http://localhost:4000"}/api`
+    ? `${process.env.BACKEND_URL ?? "https://ecommer-zhxh.vercel.app"}/api`
     : "/api");
 const TOKEN_STORAGE_KEY = "ecosmoke_auth_token";
 const AGE_TOKEN_STORAGE_KEY = "ecosmoke_age_verification";

@@ -1,4 +1,4 @@
-const BACKEND_URL = process.env.BACKEND_URL ?? "http://localhost:4000";
+const BACKEND_URL = process.env.BACKEND_URL ?? "https://ecommer-zhxh.vercel.app";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
